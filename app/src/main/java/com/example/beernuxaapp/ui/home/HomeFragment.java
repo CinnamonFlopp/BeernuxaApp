@@ -14,23 +14,38 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beernuxaapp.R;
 import com.example.beernuxaapp.adapters.HomeHorAdapter;
+import com.example.beernuxaapp.adapters.HomeVerAdapter;
+import com.example.beernuxaapp.adapters.UpdateVerticalRec;
 import com.example.beernuxaapp.databinding.FragmentHomeBinding;
 import com.example.beernuxaapp.models.HomeHorModel;
+import com.example.beernuxaapp.models.HomeVerModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
-    RecyclerView homeHorizontalRec;
-    List<HomeHorModel> homeHorModelList;
+    RecyclerView homeHorizontalRec,homeVerticalRec;
+    ArrayList<HomeHorModel> homeHorModelList;
     HomeHorAdapter homeHorAdapter;
+
+    /////Vertical
+    ArrayList<HomeVerModel> homeVerModelList;
+    HomeVerAdapter homeVerAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home,container,false);
 
         homeHorizontalRec = root.findViewById(R.id.home_hor_rec);
+        homeVerticalRec = root.findViewById(R.id.home_ver_rec);
+
+
+        ///////////////Horizontal RecyclerView
+
+
+
+
 
         homeHorModelList = new ArrayList<>();
 
@@ -41,15 +56,34 @@ public class HomeFragment extends Fragment {
         homeHorModelList.add(new HomeHorModel(R.drawable.porter,"Porter"));
         homeHorModelList.add(new HomeHorModel(R.drawable.kriek,"Kriek"));
 
-        homeHorAdapter = new HomeHorAdapter(getActivity(),homeHorModelList);
+        homeHorAdapter = new HomeHorAdapter(this,getActivity(),homeHorModelList);
         homeHorizontalRec.setAdapter(homeHorAdapter);
         homeHorizontalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
         homeHorizontalRec.setHasFixedSize(true);
         homeHorizontalRec.setNestedScrollingEnabled(false);
 
 
+        ///////////////Vertical RecyclerView
+
+        homeVerModelList = new ArrayList<>();
+
+        homeVerAdapter = new HomeVerAdapter(getActivity(),homeVerModelList);
+        homeVerticalRec.setAdapter(homeVerAdapter);
+        homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
+
+
+
         return root;
     }
 
 
+    @Override
+    public void callBack(int position, ArrayList<HomeVerModel> list) {
+
+        homeVerAdapter = new HomeVerAdapter(getContext(),list);
+
+        homeVerAdapter.notifyDataSetChanged();
+        homeVerticalRec.setAdapter(homeVerAdapter);
+
+    }
 }
