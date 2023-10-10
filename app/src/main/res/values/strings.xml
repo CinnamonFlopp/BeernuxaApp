@@ -23,4 +23,5 @@
     <string name="my_cart">My Cart</string>
     <string name="nickname">NickName</string>
     <string name="realname">RealName</string>
+    <string name="cost">*****</string>
 </resources>
