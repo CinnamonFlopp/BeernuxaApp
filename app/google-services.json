@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "384734125982",
+    "project_id": "beernuxa",
+    "storage_bucket": "beernuxa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384734125982:android:222e77a5d96fc71133008f",
+        "android_client_info": {
+          "package_name": "com.example.beernuxaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbkoNUJv10L4TjPdYjVGFzisd-KcLST8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

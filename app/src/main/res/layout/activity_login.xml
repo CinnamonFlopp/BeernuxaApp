@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/signinpassword"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:layout_marginTop="36dp"
@@ -59,11 +59,11 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/signinemail"
         app:layout_constraintWidth_percent=".8" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/signinemail"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:layout_marginTop="28dp"
@@ -92,7 +92,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/signinpassword"
         app:layout_constraintVertical_bias="0.328"
         app:layout_constraintWidth_percent=".8" />
 
@@ -112,6 +112,7 @@
         app:layout_constraintVertical_bias="0.507" />
 
     <TextView
+        android:id="@+id/gotosingup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
